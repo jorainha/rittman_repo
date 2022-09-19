@@ -1,0 +1,15 @@
+
+version: 2
+
+sources:
+  - name: rittman_data
+    description: sourced data from public bigquery
+    database: bigquery-public-data
+    dataset: stackoverflow
+    tables:
+      - name: stackoverflow_posts
+        description: posts 
+      - name: posts_questions
+        description: posts with questions
+      - name: posts_answers
+        description: posts with answers
