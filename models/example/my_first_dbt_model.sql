@@ -24,7 +24,7 @@ with source_data as (
     select 1 as id,
     current_date() as date
     union all
-    select null as id,
+    select 2 as id,
     null as date
 
 )
