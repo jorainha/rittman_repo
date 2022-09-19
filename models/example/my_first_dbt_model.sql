@@ -7,11 +7,21 @@
     Try changing "table" to "view" below
 */
 
-{{ config(materialized='table') }}
+{{
+    config(
+            materialized='incremental',
+            incremental_strategy="insert_overwrite",
+            partition_by={
+                "field": "date",
+                "data_type": "date",
+                "granularity": "day"
+            }
+        )
+}}
 
 with source_data as (
 
-    select 1 as id
+    select current_date() as date
     union all
     select null as id
 
