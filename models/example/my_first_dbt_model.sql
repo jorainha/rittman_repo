@@ -21,9 +21,11 @@
 
 with source_data as (
 
-    select current_date() as date
+    select id as id,
+    current_date() as date
     union all
-    select null as id
+    select null as id,
+    null as date
 
 )
 
